@@ -53,3 +53,25 @@ for (const note of notes) {
         console.log(note)
     }
 }
+
+const createNote = (note) => {
+    const lastIndex = notes.length - 1;
+    const currentLastNote = notes[lastIndex];
+    const maxId = currentLastNote.id;
+    const idForNewNote = maxId + 1;
+
+    note.id = idForNewNote;
+
+    notes.push(note);
+}
+
+const moreNewerNote = {
+    subject: "creating notes",
+    date: "7-19-21",
+    feeling: "hungry",
+    timeSpent: 3
+}
+
+createNote(moreNewerNote);
+
+console.log(notes);
